@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN mvn -Dskiptests clean package
+RUN mvn -DskipTests=true clean package
 
 # 2. run
 FROM amazoncorretto:21-alpine AS runner
