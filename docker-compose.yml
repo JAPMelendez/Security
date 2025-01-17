@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    image: postgres:13
+    image: postgres:latest
     container_name: postgres-db
     environment:
       POSTGRES_DB: Wolframio
@@ -20,9 +20,11 @@ services:
       context: .
       dockerfile: Dockerfile
     depends_on:
-      - db
+      - postgres
     ports:
       - "8084:8084"
+    networks:
+      - my-network
 
 networks:
   my-network:
