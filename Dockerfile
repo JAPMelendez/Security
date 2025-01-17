@@ -1,5 +1,5 @@
 # 1. build
-FROM amazoncoretto:21-alpine AS builder
+FROM maven:3.9.4-amazoncorretto-21 AS builder
 WORKDIR /app
 
 COPY . /app
